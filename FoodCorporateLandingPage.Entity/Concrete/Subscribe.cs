@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace FoodCorporateLandingPage.Entity.Concrete
 {
-    internal class Subscribe
+    public class Subscribe
     {
+        public int Id { get; set; }
+        public string? Mail { get; set; }
     }
 }

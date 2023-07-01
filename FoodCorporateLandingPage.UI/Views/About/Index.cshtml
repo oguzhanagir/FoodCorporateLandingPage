@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Component.InvokeAsync("Header")
+ <!--::::: HEADER AREA END :::::::-->
+        <!--::::: WELCOME AREA START :::::::-->
+        <div class="welcome-area" id="home">
+            <div class="container-fluid">
+                <div class="welcome-single inner primary-overlay" style="background-image:url(assets/img/about/about-bg.jpg);background-position: center;background-size: cover">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 m-auto text-center">
+                                <div class="text-box">
+                                    <h1>TREATOS HOTELS. <br>
+                                <span>MORE THAN A STAY.</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--::::: WELCOME AREA END :::::::-->
+        <!--::::: CARD AREA START :::::::-->
+        <div class="card-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card-text-box">
+                            <h6>Abot Us</h6>
+                            <h2>SEE WHAT EVERYONE<br>is <span>talking about</span></h2>
+                            <div class="space-10"></div>
+                            <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-2">
+                        <div class="details-card">
+                            <h3>OUR OVERVIEW</h3>
+                            <div class="space-20"></div>
+                            <div class="contact-info"> <i class="fal fa-hourglass-start"></i>
+                                <p>EXPERIENCED :</p> <span>12 Years experience</span>
+                            </div>
+                            <div class="contact-info"> <i class="fas fa-user"></i>
+                                <p>OUR TALENT CHEF :</p> <span>120 MEMBERS</span>
+                            </div>
+                            <div class="contact-info"> <i class="fas fa-star"></i>
+                                <p>RATING :</p> <span>124M (4.6 out of 5)<br>
+Alexandria, VA 22314, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+@await Component.InvokeAsync("SubscribeArea")
+@await Component.InvokeAsync("Footer")

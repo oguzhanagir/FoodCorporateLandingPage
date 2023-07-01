@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FoodCorporateLandingPage.Entity.Concrete
 {
-    internal class SocialMedia
+    public class SocialMedia
     {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? Url { get; set; }
     }
 }

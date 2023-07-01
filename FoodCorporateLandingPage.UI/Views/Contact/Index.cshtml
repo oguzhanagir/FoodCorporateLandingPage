@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Component.InvokeAsync("Header")
+<!--::::: welcome area start :::::::-->
+<div class="welcome-area" id="home">
+    <div class="container-fluid">
+        <div class="welcome-single inner primary-overlay" style="background-image:url(assets/img/about/about-bg.jpg);background-position: center;background-size: cover">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 m-auto text-center">
+                        <div class="text-box">
+                            <h1>
+                                WE ARE BASED IN <br>
+                                <span>UNITED STATES</span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--::::: welcome area end :::::::-->
+<!--::::: card area start :::::::-->
+<div class="card-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card-text-box">
+                    <h6>Contact Us</h6>
+                    <h2>what can we <br>help <span>you with</span></h2>
+                    <div class="space-10"></div>
+                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-2">
+                <div class="details-card">
+                    <h3>contact info</h3>
+                    <div class="space-20"></div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <p>call now :</p> <span>+75247563543</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <p>EMAIL:</p> <span>services@treatos.com</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>LOCATION:</p> <span>
+                            44 Canal Center Plaza <br>
+                            Alexandria, VA 22314, USA
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--::::: card area end :::::::-->
+<!--::::: map area start :::::::-->
+<div class="map-area">
+    <div class="container-fluid">
+        <div class="map"></div>
+    </div>
+</div>
+<!--::::: map area end :::::::-->
+<!--::::: contact area start :::::::-->
+<div class="contact-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card-text-box">
+                    <h2>LET’S WORK TOGETHER! <br> FILL OUT<span> the form.</span></h2>
+                    <div class="space-30"></div>
+                </div>
+                <div class="contact-form">
+                    <form action="#">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                        <input type="number" placeholder="Mobile">
+                        <input type="email" placeholder="Email">
+                        <textarea name="messege" id="messege" cols="30" rows="5" placeholder="tell us your case..."></textarea>
+                    </form>
+                    <div class="space-30"></div> <a href="" class="cbtn btn2">Sent messege</a>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-2">
+                <div class="details-card">
+                    <h3>OFFICE TIME</h3>
+                    <div class="space-30"></div>
+                    <div class="time-table">
+                        <table class="table table-borderless text-left">
+                            <tbody>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>:09.00-17.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>:09.00-17.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>:09.00-17.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>:09.00-17.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>:09.00-17.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>:09.00-17.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--::::: contact area end :::::::-->
+@await Component.InvokeAsync("SubscribeArea")
+@await Component.InvokeAsync("Footer")

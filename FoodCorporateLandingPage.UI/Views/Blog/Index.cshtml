@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Component.InvokeAsync("Header")
+<!--::::: welcome area start :::::::-->
+<div class="welcome-area" id="home">
+    <div class="container-fluid">
+        <div class="welcome-single inner primary-overlay" style="background-image:url(assets/img/about/about-bg.jpg);background-position: center;background-size: cover">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 m-auto text-center">
+                        <div class="text-box">
+                            <h1>Bloglar</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--::::: welcome area end :::::::-->
+@await Component.InvokeAsync("BlogGrids")
+
+
+@await Component.InvokeAsync("SubscribeArea")
+@await Component.InvokeAsync("Footer")

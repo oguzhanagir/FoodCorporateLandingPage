@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FoodCorporateLandingPage.Core.Abstract.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FoodCorporateLandingPage.UI.ViewComponents
 {
