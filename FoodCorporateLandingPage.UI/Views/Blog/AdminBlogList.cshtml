@@ -1,8 +1,73 @@
-﻿
+﻿@model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.Blog>
 @{
     ViewData["Title"] = "AdminBlogList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>AdminBlogList</h1>
 
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Bloglar</h2>
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/Admin/Index" class="breadcrumb-link">Kontrol Paneli</a></li>
+                                <li class="breadcrumb-item"><a href="/Blog/Index" class="breadcrumb-link">Blog</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog Listesi</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+
+        <div class="row">
+            <!-- ============================================================== -->
+            <!-- basic table -->
+            <!-- ============================================================== -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">Blog Listesi</h5>
+            <a href="/Blog/AddBlog" class="btn btn-primary">Blog Ekle</a>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Blog Banner</th>
+                                    <th scope="col">Başlık</th>
+                                    <th scope="col">İçerik</th>
+                                    <th scope="col">Yayın Tarihi</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                           @foreach (var blog in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@blog.Id</th>
+                                        <td><img style="width:100px; height:100px" src="~/@blog.ImagePath" /></td>
+                                       <td>@blog.Title</td>
+                                       <td><a href="/Blog/BlogDetails/@blog.Id">İncele</a></td>
+                                       <td>@blog.PublishDate</td>
+                                        <td><a href="/Blog/DeleteBlog/@blog.Id" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Blog/UpdateBlog/@blog.Id" class="btn btn-warning">Güncelle</a></td>
+                                    </tr>
+                                }
+                             
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end basic table -->
+            <!-- ============================================================== -->
+     
+        </div>
+      

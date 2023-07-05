@@ -15,7 +15,8 @@ namespace FoodCorporateLandingPage.UI.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var contact = _contactService.GetAll();
+            return View(contact);
         }
    
         public IActionResult AdminContactList()

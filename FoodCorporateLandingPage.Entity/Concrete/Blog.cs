@@ -12,6 +12,11 @@ namespace FoodCorporateLandingPage.Entity.Concrete
         public string? Title { get; set; }
         public string? Content { get; set; }
         public string? ImagePath { get; set; }
-        public string? PublishDate { get; set; }
+        public DateTime? PublishDate { get; set; }
+
+        public Blog()
+        {
+            PublishDate = DateTime.Now;
+        }
     }
 }

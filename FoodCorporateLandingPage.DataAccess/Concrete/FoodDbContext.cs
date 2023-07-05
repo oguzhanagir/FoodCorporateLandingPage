@@ -22,5 +22,6 @@ namespace FoodCorporateLandingPage.DataAccess.Concrete
         public DbSet<Service>? Services { get; set; }
         public DbSet<SocialMedia>? SocialMedias { get; set; }
         public DbSet<Subscribe>? Subscribes { get; set; }
+        public DbSet<User>? Users { get; set; }
     }
 }

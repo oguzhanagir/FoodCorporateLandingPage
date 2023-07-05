@@ -49,5 +49,11 @@ namespace FoodCorporateLandingPage.Business.Concrete
             _unitOfWork.Contacts.Update(entity);
             _unitOfWork.Save();
         }
+
+        public string GetPhoneNumber()
+        {
+            var phoneNo = _unitOfWork.Contacts.GetPhoneNumber();
+            return phoneNo;
+        }
     }
 }

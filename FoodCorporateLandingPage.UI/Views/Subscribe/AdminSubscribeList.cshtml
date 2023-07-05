@@ -1,0 +1,65 @@
+﻿@model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.Subscribe>
+
+@{
+    ViewData["Title"] = "AdminSubscribeList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Aboneler</h2>
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/Admin/Index" class="breadcrumb-link">Kontrol Paneli</a></li>
+                                <li class="breadcrumb-item"><a href="/Subscribe/AdminSubscribeList" class="breadcrumb-link">Abone</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+
+        <div class="row">
+            <!-- ============================================================== -->
+            <!-- basic table -->
+            <!-- ============================================================== -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">Abone Listesi</h5>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Mail</th>
+                                    <th scope="col">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var subscribe in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@subscribe.Id</th>
+                                        <td>@subscribe.Mail</td>
+
+                                        <td><a href="/Subscribe/DeleteSubscribe/@subscribe.Id" class="btn btn-danger">Sil</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end basic table -->
+            <!-- ============================================================== -->
+
+        </div>
+

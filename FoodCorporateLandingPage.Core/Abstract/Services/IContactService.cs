@@ -9,5 +9,6 @@ namespace FoodCorporateLandingPage.Core.Abstract.Services
 {
     public interface IContactService : IGenericService<Contact>
     {
+        string GetPhoneNumber();
     }
 }

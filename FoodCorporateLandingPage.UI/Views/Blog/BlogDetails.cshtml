@@ -1,4 +1,4 @@
-﻿
+﻿@model FoodCorporateLandingPage.Entity.Concrete.Blog
 @{
     ViewData["Title"] = "BlogDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,12 +8,12 @@
 <!--::::: welcome area start :::::::-->
 <div class="welcome-area" id="home">
     <div class="container-fluid">
-        <div class="welcome-single inner primary-overlay" style="background-image:url(assets/img/about/about-bg.jpg);background-position: center;background-size: cover">
+        <div class="welcome-single inner primary-overlay" style="background-image:url(../../@Model.ImagePath);background-position: center;background-size: cover">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 m-auto text-center">
                         <div class="text-box">
-                            <h1>THESE BRITISH COLUMBIA PROPERTIES PUT EMPHASIS ON CONSERVATION</h1>
+                            <h1>@Model.Title</h1>
                         </div>
                     </div>
                 </div>
@@ -28,51 +28,11 @@
         <div class="row">
             <div class="col-lg-8 m-auto">
                 <div class="single_blog_text">
-                    <p>Last year, the global design community came together at 90+ events in over 37 countries to celebrate the first-ever World Interaction Design Day. I woke up on the morning of September 25th to social media posts about events that had already taken place, and I went to bed that night while events were still happening. It was nothing short of incredible.</p>
-                    <br>
-                    <p>Thousands of people attended events, listened to talks, participated in workshops, tuned in online, and discussed how to create positive, long-lasting effects on the world around us</p>
-                    <br>
-                    <p>This wouldn’t have been possible without a ton of support. Not just from the leadership team at Adobe who gave us support and resources to fund so much, but also from our other supporting partner organizations including Creative Mornings, AIGA, Ladies That UX and SoDA. Most importantly though, there’s absolutely no way we could have pulled this off without the tireless efforts of Brenda Sanderson, the executive director of IxDA, and the IxDA local leaders who planned and hosted events. I’m thrilled we get to do this all over again!</p>
-                    <br>
-                    <p>I’m proud to announce that once again we’ll be hosting World Interaction Design Day in partnership with IxDA on September 24, 2019. This year’s theme is Trust and Responsibility, and be sure to read more from Tré Seals on how he created the visual identity for IxDD 2019.</p>
-                    <br>
-                    <p>Once again we are thrilled to also have the support of industry organizations, and we’ve also engaged a committee of design leaders from across the world who have, and will continue to, lend their support and expertise.</p>
+                  <p>@Html.Raw(Model.Content)</p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="single_blog_mid_image"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 m-auto">
-                <div class="single_blog_text">
-                    <h4>How to get involved</h4>
-                    <p>Last year, the global design community came together at 90+ events in over 37 countries to celebrate the first-ever World Interaction Design Day. I woke up on the morning of September 25th to social media posts about events that had already taken place, and I went to bed that night while events were still happening. It was nothing short of incredible.</p>
-                    <br>
-                    <p>Thousands of people attended events, listened to talks, participated in workshops, tuned in online, and discussed how to create positive, long-lasting effects on the world around us.</p>
-                    <div class="single_blog_mid_carousel owl-carousel">
-                        <div class="single_blog_mid_single_carousel">
-                            <img src="assets/img/icon/q3.png" alt="">
-                            <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.</p>
-                            <div class="space-30"></div>
-                            <div class="author">
-                                <div class="author__img">
-                                    <img src="assets/img/blog/author.png" alt="">
-                                </div>
-                                <p>
-                                    SUBASH CHANDRA <span>Founder at Seative Digital</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Last year, the global design community came together at 90+ events in over 37 countries to celebrate the first-ever World Interaction Design Day. I woke up on the morning of September 25th to social media posts about events that had already taken place, and I went to bed that night while events were still happening. It was nothing short of incredible.</p>
-                    <br>
-                    <p>Thousands of people attended events, listened to talks, participated in workshops, tuned in online, and discussed how to create positive, long-lasting effects on the world around us.</p>
-                </div>
-            </div>
-        </div>
+       
     </div>
 </div>
 

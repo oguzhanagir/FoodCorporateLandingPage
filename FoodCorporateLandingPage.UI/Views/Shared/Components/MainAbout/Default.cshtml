@@ -1,26 +1,38 @@
-﻿     <!--::::: about area start :::::::-->
+﻿@model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.About>
+<!--::::: about area start :::::::-->
 <div class="about-area">
     <div class="container">
-        <div class="row about-wrap br5">
-            <div class="col-md-6 align-self-center wow fadeInLeft">
-                <div class="about-text-box white-bg">
-                    <h6>OUR PRIDE AND JOY</h6>
-                    <h2>THE FAMILY THAT BACONS <span>together</span></h2>
-                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. of human happiness. No one rejects, dislikes, or avoids pleasure itself,</p>
-                    <div class="space-30"></div> <a href="" class="cbtn btn3">VISIT OUR MENU <img src="assets/img/icon/menu-btn-icon.png" alt=""><i class="fal fa-long-arrow-right"></i></a>
+        @foreach (var about in Model)
+        {
+
+            <div class="row about-wrap br5">
+
+                <div class="col-md-6 align-self-center wow fadeInLeft">
+                    <div class="about-text-box white-bg">
+                        <h6>Bizimle Çalışın</h6>
+                        <h2>@about.Title</h2>
+                        @if (@about.Content!.Length > 600)
+                        {
+                            <p>@Html.Raw(@about.Content.Substring(0, 600))</p>
+                        }
+                        else
+                        {
+                            @Html.Raw(@about.Content)
+                        }
+                        <div class="space-30"></div> <a href="/Contact/Index" class="cbtn btn3">İletişime Geç<img src="assets/img/icon/menu-btn-icon.png" alt=""><i class="fal fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 align-self-center wow fadeInRight">
+                    <div class="about-right-slide owl-carousel">
+                        <div class="single-about-right-slide he">
+                            <img src="~/@about.ImagePath" alt="">
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 align-self-center wow fadeInRight">
-                <div class="about-right-slide owl-carousel">
-                    <div class="single-about-right-slide he">
-                        <img src="assets/img/about/about1.jpg" alt="">
-                    </div>
-                    <div class="single-about-right-slide he">
-                        <img src="assets/img/about/about2.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+            break;
+        }
     </div>
 </div>
 <!--::::: about area end :::::::-->

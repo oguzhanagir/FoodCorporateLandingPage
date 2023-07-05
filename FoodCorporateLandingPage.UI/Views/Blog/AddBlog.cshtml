@@ -1,8 +1,40 @@
-﻿
+﻿@model FoodCorporateLandingPage.Entity.Concrete.Blog
 @{
     ViewData["Title"] = "AddBlog";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>AddBlog</h1>
+
+<script src="https://cdn.tiny.cloud/1/85g670p73mrxvdgf5t3g9fcg7it4xrqko3lxljbk4bn5tu0b/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+@using (Html.BeginForm("AddBlog", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group">
+        <label for="inputText3" class="col-form-label">Blog Başlık</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control input-default" })
+    </div>
+
+    <div class="input-style-1">
+        <label for="inputText3" class="col-form-label">Blog Banner</label>
+        <input type="file" name="file" />
+    </div>
+
+    <br />
+    <div class="form-group">
+        <label >İçerik</label>
+        @Html.TextAreaFor(x => x.Content, new { @class = "form-control input-default" })
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Blog Ekle</button>
+}
+
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    });
+</script>
 

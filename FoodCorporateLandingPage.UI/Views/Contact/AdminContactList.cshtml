@@ -1,8 +1,27 @@
-﻿
+﻿@model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.Contact>
 @{
     ViewData["Title"] = "AdminContactList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>AdminContactList</h1>
+
+<div class="row">
+    @foreach (var contact in Model)
+    {
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">@contact.Title</h3>
+                    <p class="card-text">@contact.Content</p>
+                    <p class="card-text">@contact.PhoneNumber</p>
+                    <p class="card-text">@contact.Address</p>
+                    <p class="card-text">@contact.Mail</p>
+                    <a href="/Contact/UpdateContact/@contact.Id" class="btn btn-primary">İletişim Bilgileri Güncelle</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
 

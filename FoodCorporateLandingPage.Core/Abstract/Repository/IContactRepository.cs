@@ -9,5 +9,6 @@ namespace FoodCorporateLandingPage.Core.Abstract.Repository
 {
     public interface IContactRepository:IGenericRepository<Contact>
     {
+        string GetPhoneNumber();
     }
 }

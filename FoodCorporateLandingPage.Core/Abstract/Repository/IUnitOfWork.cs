@@ -16,6 +16,7 @@ namespace FoodCorporateLandingPage.Core.Abstract.Repository
         IServiceRepository Services { get; }
         ISocialMediaRepository SocialMedias { get; }
         ISubscribeRepository Subscribes { get; }
+        IUserRepository Users { get; }
 
         void Save();
 

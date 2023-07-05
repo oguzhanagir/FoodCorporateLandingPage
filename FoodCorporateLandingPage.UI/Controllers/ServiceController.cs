@@ -1,4 +1,5 @@
-﻿using FoodCorporateLandingPage.Core.Abstract.Services;
+﻿using FoodCorporateLandingPage.Business.Concrete;
+using FoodCorporateLandingPage.Core.Abstract.Services;
 using FoodCorporateLandingPage.Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,10 +29,73 @@ namespace FoodCorporateLandingPage.UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddService(Service service)
+        public async Task<IActionResult> AddService(Service service, IFormFile file)
         {
+            if (service != null)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var filePath = "images/service/" + fileName;
+
+                    using (var stream = new FileStream(Path.Combine("wwwroot", filePath), FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                    service.ImagePath = filePath;
+                }
+                else
+                {
+                    var findAbout = _serviceService.GetById(service.Id);
+                    service.ImagePath = findAbout.ImagePath;
+
+                }
+                
             _serviceService.Create(service);
+            }
             return RedirectToAction("AdminServiceList","Service");
         }
+
+        [HttpGet]
+        public IActionResult UpdateService(int id)
+        {
+            var service = _serviceService.GetById(id);
+            return View(service);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateService(Service service, IFormFile file)
+        {
+            if (service != null)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var filePath = "images/service/" + fileName;
+
+                    using (var stream = new FileStream(Path.Combine("wwwroot", filePath), FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                    service.ImagePath = filePath;
+                }
+                else
+                {
+                    var findAbout = _serviceService.GetById(service.Id);
+                    service.ImagePath = findAbout.ImagePath;
+
+                }
+
+                _serviceService.Update(service);
+            }
+            return RedirectToAction("AdminServiceList", "Service");
+        }
+
+        public IActionResult DeleteService(int id)
+        {
+            _serviceService.Delete(id);
+            return RedirectToAction("AdminServiceList", "Service");
+        }
+
     }
 }

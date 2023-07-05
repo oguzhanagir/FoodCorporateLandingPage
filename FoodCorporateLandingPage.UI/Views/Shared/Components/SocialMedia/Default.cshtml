@@ -1,19 +1,16 @@
-﻿<div class="header-socials">
+﻿@model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.SocialMedia>
+
+<div class="header-socials">
     <ul>
-        <li>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-        </li>
-        <li>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </li>
-        <li>
-            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-        </li>
-        <li class="ml-lg-4">
-            <a href="#"><i class="fas fa-phone"></i></a>
-        </li>
+        @foreach (var socialMedia in Model)
+        {
+            <li>
+                <a href="#"><i class="fab fa-@socialMedia.Name-f"></i></a>
+            </li>
+        }
+        
         <li class="social-contact-text">
-            Telefon Numaramız <span>+254122478</span>
+            Telefon Numaramız <span>+@ViewBag.PhoneNumber</span>
         </li>
     </ul>
 </div>

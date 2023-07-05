@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.Service>
+@{
+    ViewData["Title"] = "AdminServiceList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Hizmetler</h2>
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/Admin/Index" class="breadcrumb-link">Kontrol Paneli</a></li>
+                                <li class="breadcrumb-item"><a href="/Service/Index" class="breadcrumb-link">Hizmetler</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Hizmet Listesi</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+
+        <div class="row">
+            <!-- ============================================================== -->
+            <!-- basic table -->
+            <!-- ============================================================== -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">Hizmetler Listesi</h5>
+            <a href="/Service/AddService" class="btn btn-primary">Hizmet Ekle</a>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Hizmet Banner</th>
+                                    <th scope="col">Başlık</th>
+                                    <th scope="col">İçerik</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var service in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@service.Id</th>
+                                        <td><img src="~/@service.ImagePath" /></td>
+                                        <td>@service.Title</td>
+                                        <td>@service.Content</td>
+                                        <td><a href="/Service/DeleteService/@service.Id" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Service/UpdateService/@service.Id" class="btn btn-warning">Güncelle</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end basic table -->
+            <!-- ============================================================== -->
+
+        </div>
+
+

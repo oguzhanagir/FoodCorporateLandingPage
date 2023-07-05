@@ -1,30 +1,15 @@
-﻿     <!--::::: menu area start :::::::-->
+﻿ @model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.Service>   
+ <!--::::: menu area start :::::::-->
 <div class="items-menu-area padding10070">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 align-self-center">
                 <div class="menu-heading text-box wow fadeInDown">
-                    <h2>our <span>special menu</span></h2>
+                    <h2><span>HİZMETLERİMİZ</span></h2>
                 </div>
             </div>
-            <div class="col-lg-3 align-self-center">
-                <div class="mr-sm-30"></div> <a href="" class="cbtn btn4 wow fadeInDown">view all menu <img src="assets/img/icon/menu-btn-icon2.png" alt=""><i class="far fa-long-arrow-right"></i></a>
-            </div>
-            <div class="col-lg-5 align-self-center text-right">
-                <div class="menu-tabs wow fadeInDown">
-                    <ul class="nav" role="tablist">
-                        <li>
-                            <a class="active" id="home-tab" data-toggle="tab" href="#home1" role="tab" aria-controls="home1" aria-selected="true">BREAKFAST</a>
-                        </li>
-                        <li>
-                            <a class="" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">LUNCH</a>
-                        </li>
-                        <li>
-                            <a class="" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">DINNER</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+           
+            
         </div>
         <div class="space-60"></div>
         <!-- Tab panes -->
@@ -32,141 +17,23 @@
             <div class="tab-pane fade show active" id="home1" role="tabpanel" aria-labelledby="home-tab">
                 <div class="row">
                     <div class="menu-carousel owl-carousel">
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_.png" alt=""> <span>10% off</span>
+                       @foreach (var service in Model)
+                        {
+                            <div class="single-menu">
+                                <div class="single-menu-img he">
+                                    <img src="@service.ImagePath" alt="@service.Title"> 
+                                </div>
+                                <div class="menu-text-box text-box">
+                                    <a href="#">@service.Title</a>
+                                    <p>@service.Content</p>
+                                </div>
                             </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Spaghetti alla <span>$27.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_2.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Bake teriyaki <span>$45.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_3.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Apple cider sauce<span>$75.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_4.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">metal nirvana<span>$25.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_5.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Chicken enchiladas<span>$25.43</span></a>
-                            </div>
-                        </div>
+                        }
+                   
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="row">
-                    <div class="menu-carousel owl-carousel">
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Spaghetti alla <span>$27.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_2.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Bake teriyaki <span>$45.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_3.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Apple cider sauce<span>$75.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_4.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">metal nirvana<span>$25.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_5.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Chicken enchiladas<span>$25.43</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <div class="row">
-                    <div class="menu-carousel owl-carousel">
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Spaghetti alla <span>$27.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_2.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Bake teriyaki <span>$45.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_3.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Apple cider sauce<span>$75.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_4.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">metal nirvana<span>$25.43</span></a>
-                            </div>
-                        </div>
-                        <div class="single-menu">
-                            <div class="single-menu-img he">
-                                <img src="assets/img//menu/menu_5.png" alt=""> <span>10% off</span>
-                            </div>
-                            <div class="menu-text-box text-box">
-                                <a href="#">Chicken enchiladas<span>$25.43</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
         </div>
     </div>
 </div>

@@ -23,6 +23,7 @@ namespace FoodCorporateLandingPage.DataAccess.Concrete
             Services = new ServiceRepository(_dbContext);
             SocialMedias = new SocialMediaRepository(_dbContext);
             Subscribes = new SubscribeRepository(_dbContext);
+            Users = new UserRepository(_dbContext);
         }
 
         public IAboutRepository Abouts { get; }
@@ -40,6 +41,7 @@ namespace FoodCorporateLandingPage.DataAccess.Concrete
         public ISocialMediaRepository SocialMedias { get; }
 
         public ISubscribeRepository Subscribes { get; }
+        public IUserRepository Users { get; }
 
         public void Save()
         {

@@ -1,4 +1,6 @@
-﻿ <!--:::::footer area start :::::::-->
+﻿@model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.Contact >
+
+<!--:::::footer area start :::::::-->
 <div class="footer-area footer-bg">
     <div class="container">
         <div class="row">
@@ -7,81 +9,30 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="single-footer">
-                                <h3>Usefull Links</h3>
+                                <h3>Menü</h3>
                                 <ul>
                                     <li>
-                                        <a href="#">About us</a>
+                                        <a href="/Home/Index">Ana Sayfa</a>
                                     </li>
                                     <li>
-                                        <a href="#">Our special menu</a>
+                                        <a href="/About/Index">Hakkımızda</a>
                                     </li>
                                     <li>
-                                        <a href="#">History</a>
+                                        <a href="/Blog/Index">Blog</a>
                                     </li>
                                     <li>
-                                        <a href="#">Contacts</a>
+                                        <a href="/Contact/Index">İletişim</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Booking table</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Testimonial</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Today hot deals</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Latest news</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Terms & Conditions</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cookie policy</a>
-                                    </li>
+                                   
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-7">
-                            <div class="instagram-footer">
-                                <h3>Instagram</h3>
-                                <div class="single-intagram he">
-                                    <a href="">
-                                        <img src="assets/img/instagram/product1.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="single-intagram he">
-                                    <a href="">
-                                        <img src="assets/img/instagram/product3.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="single-intagram he">
-                                    <a href="">
-                                        <img src="assets/img/instagram/product2.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="single-intagram he">
-                                    <a href="">
-                                        <img src="assets/img/instagram/product4.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="single-intagram he">
-                                    <a href="">
-                                        <img src="assets/img/instagram/product5.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="single-intagram he">
-                                    <a href="">
-                                        <img src="assets/img/instagram/product6.jpg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="copyright">
-                                <p>2019 © Treatos | Designed by Niloy ahamed sujon</p>
+                                <p>2023 © Developed by <a href="~/www.yipadanismanlik.com" style="color:#6CA7EC;font-weight:600">YİPA Danışmanlık</a> </p>
                             </div>
                         </div>
                     </div>
@@ -93,36 +44,28 @@
                         <img src="assets/img/logo/logo2.png" alt="">
                     </a>
                     <div class="space-20"></div>
-                    <div class="footer-cta">
-                        <div class="single-footer-cta">
-                            <i class="fas fa-phone"></i>
-                            call now :
-                            <h6>+254712546874</h6>
+                   @foreach (var contactInfo in Model)
+                    {
+                        <div class="footer-cta">
+                            <div class="single-footer-cta">
+                                <i class="fas fa-phone"></i>
+                                Telefon Numaramız :
+                                <h6>+@contactInfo.PhoneNumber</h6>
+                            </div>
+                            <div class="single-footer-cta">
+                                <i class="fal fa-envelope"></i>
+                                E-Posta:
+                                <h6>@contactInfo.Mail</h6>
+                            </div>
+                            <div class="single-footer-cta">
+                                <i class="far fa-map-marker-alt"></i>
+                                Adres:
+                                <h6>@contactInfo.Address</h6>
+                            </div>
                         </div>
-                        <div class="single-footer-cta">
-                            <i class="fal fa-envelope"></i>
-                            Email:
-                            <h6>Niloyahmedsujon@gmail.com</h6>
-                        </div>
-                        <div class="single-footer-cta">
-                            <i class="far fa-map-marker-alt"></i>
-                            Location:
-                            <h6>Kushtia, Dhaka, Bangladesh</h6>
-                        </div>
-                    </div>
-                    <div class="footer-social">
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                    }
+               
+                    
                     <div class="back-top text-center">
                         <div class="back-top-btn text-center">
                             <a href="#header">Back to Top <i class="fal fa-angle-up"></i></a>

@@ -1,8 +1,22 @@
-﻿
+﻿@model IEnumerable<FoodCorporateLandingPage.Entity.Concrete.About>
 @{
     ViewData["Title"] = "AdminAboutList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>AdminAboutList</h1>
+<div class="row">
+   @foreach (var about in Model)
+    {
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <img src="@about.ImagePath">
+                    <h3 class="card-title">@about.Title</h3>
+                    <p class="card-text">@Html.Raw(@about.Content)</p>
+                    <a href="/About/UpdateAbout/@about.Id" class="btn btn-primary">Hakkımızda Güncelle</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
 

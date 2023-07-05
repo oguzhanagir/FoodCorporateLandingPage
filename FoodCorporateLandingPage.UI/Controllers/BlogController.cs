@@ -1,4 +1,5 @@
-﻿using FoodCorporateLandingPage.Core.Abstract.Services;
+﻿using FoodCorporateLandingPage.Business.Concrete;
+using FoodCorporateLandingPage.Core.Abstract.Services;
 using FoodCorporateLandingPage.Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,9 +37,28 @@ namespace FoodCorporateLandingPage.UI.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddBlog(Blog blog)
+        public async Task<IActionResult> AddBlog(Blog blog, IFormFile file)
         {
-            _blogService.Create(blog);
+            if (blog != null)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var filePath = "images/blog/" + fileName;
+
+                    using (var stream = new FileStream(Path.Combine("wwwroot", filePath), FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                    blog.ImagePath = filePath;
+                }
+                else
+                {
+                    var findBlog = _blogService.GetById(blog.Id);
+                    blog.ImagePath = findBlog.ImagePath;
+                }
+                _blogService.Create(blog);
+            }
             return RedirectToAction("AdminBlogList", "Blog");
         }
 
@@ -50,9 +70,28 @@ namespace FoodCorporateLandingPage.UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateBlog(Blog blog)
+        public async Task<IActionResult> UpdateBlog(Blog blog, IFormFile file)
         {
-            _blogService.Update(blog);
+            if (blog != null)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var filePath = "images/blog/" + fileName;
+
+                    using (var stream = new FileStream(Path.Combine("wwwroot", filePath), FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                    blog.ImagePath = filePath;
+                }
+                else
+                {
+                    var findBlog = _blogService.GetById(blog.Id);
+                    blog.ImagePath = findBlog.ImagePath;
+                }
+                _blogService.Update(blog);
+            }
             return RedirectToAction("AdminBlogList", "Blog");
         }
 

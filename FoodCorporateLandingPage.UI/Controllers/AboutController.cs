@@ -25,11 +25,37 @@ namespace FoodCorporateLandingPage.UI.Controllers
             return View(aboutList);
         }
 
+        [HttpGet]
+        public IActionResult UpdateAbout(int id)
+        {
+            var about = _aboutService.GetById(id);
+            return View(about);
+        }
 
         [HttpPost]
-        public IActionResult UpdateAbout(About about)
+        public async Task<IActionResult> UpdateAbout(About about, IFormFile file)
         {
-            _aboutService.Update(about);
+            if (about != null)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var filePath = "images/about/" + fileName;
+
+                    using (var stream = new FileStream(Path.Combine("wwwroot", filePath), FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                    about.ImagePath = filePath;
+                }
+                else
+                {
+                    var findAbout = _aboutService.GetById(about.Id);
+                    about.ImagePath = findAbout.ImagePath;
+
+                }
+                _aboutService.Update(about);
+            }
             return RedirectToAction("AdminAboutList","About");
         }
     }

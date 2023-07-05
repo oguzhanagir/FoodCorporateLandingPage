@@ -1,0 +1,28 @@
+﻿@model FoodCorporateLandingPage.Entity.Concrete.SocialMedia
+@{
+    ViewData["Title"] = "AddSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+@using (Html.BeginForm("AddSocialMedia", "SocialMedia", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <label for="inputText3" class="col-form-label">Sosyal Medya Adı</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-default" })
+    </div>
+    <br />
+
+    <div class="form-group">
+        <label for="inputText3" class="col-form-label">Sosyal Medya URL</label>
+        @Html.TextBoxFor(x => x.Url, new { @class = "form-control input-default" })
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Sosyal Medya Ekle</button>
+}
